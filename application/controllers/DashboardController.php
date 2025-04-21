@@ -21,8 +21,8 @@ class DashboardController extends CI_Controller
 	 */
 	public function index()
 	{
-		echo "test";
-		// $data =  ['judul' => 'Dashboard'];
-		// $this->template->load('template/index', 'pages/dashboard', $data, false);
+	
+		$data =  ['judul' => 'Dashboard'];
+		$this->template->load('template/index', 'pages/dashboard', $data, false);
 	}
 }

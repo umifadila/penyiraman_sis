@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
-    <link href="<?= base_url() ?>assets/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
