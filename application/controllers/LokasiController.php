@@ -8,7 +8,7 @@ class LokasiController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('session');
-
+		$this->load->model('LokasiModel');
 		// Cek apakah session login ada
 		if (!$this->session->userdata('is_logged_in')) {
 			// Jika tidak ada session, redirect ke halaman login
