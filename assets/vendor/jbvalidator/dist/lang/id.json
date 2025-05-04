@@ -1,0 +1,62 @@
+{
+  "maxValue": "Nilai harus lebih kecil atau sama dengan %s.",
+  "minValue": "Nilai harus lebih besar atau sama dengan %s.",
+  "maxLength": "Harap perpanjang teks ini hingga %s karakter atau lebih sedikit (saat ini Anda menggunakan %s karakter).",
+  "minLength": "Harap perpanjang teks ini hingga %s karakter atau lebih (saat ini Anda menggunakan %s karakter).",
+  "minSelectOption": "Harap pilih setidaknya %s opsi.",
+  "maxSelectOption": "Harap pilih paling banyak %s opsi.",
+  "groupCheckBox": "Harap pilih setidaknya %s opsi.",
+  "equal": "Field ini tidak cocok dengan field %s.",
+  "fileMinSize": "Ukuran file tidak boleh kurang dari %s byte.",
+  "fileMaxSize": "Ukuran file tidak boleh lebih dari %s byte.",
+  "number": "Harap masukkan angka.",
+  "HTML5": {
+    "valueMissing": {
+      "INPUT": {
+        "default": "Harap isi field ini.",
+        "checkbox": "Harap centang kotak ini.",
+        "radio": "Harap pilih salah satu opsi ini.",
+        "file": "Harap pilih file."
+      },
+      "SELECT": "Harap pilih item dalam daftar.",
+      "TEXTAREA": "Harap isi field ini."
+    },
+    "typeMismatch": {
+      "email": "Harap masukkan alamat email yang valid.",
+      "url": "Harap masukkan URL yang valid."
+    },
+    "rangeUnderflow": {
+      "date": "Nilai harus %s atau lebih besar.",
+      "month": "Nilai harus %s atau lebih besar.",
+      "week": "Nilai harus %s atau lebih besar.",
+      "time": "Nilai harus %s atau lebih besar.",
+      "datetimeLocale": "Nilai harus %s atau lebih besar.",
+      "number": "Nilai harus lebih besar atau sama dengan %s.",
+      "range": "Nilai harus lebih besar atau sama dengan %s."
+    },
+    "rangeOverflow": {
+      "date": "Nilai harus %s atau lebih kecil.",
+      "month": "Nilai harus %s atau lebih kecil.",
+      "week": "Nilai harus %s atau lebih kecil.",
+      "time": "Nilai harus %s atau lebih kecil.",
+      "datetimeLocale": "Nilai harus %s atau lebih kecil.",
+      "number": "Nilai harus lebih kecil atau sama dengan %s.",
+      "range": "Nilai harus lebih kecil atau sama dengan %s."
+    },
+    "stepMismatch": {
+      "date": "Anda hanya dapat memilih setiap %s hari di kalender tanggal.",
+      "month": "Anda hanya dapat memilih setiap %s bulan di kalender tanggal.",
+      "week": "Anda hanya dapat memilih setiap %s minggu di kalender tanggal.",
+      "time": "Anda hanya dapat memilih setiap %s detik di pemilih waktu.",
+      "datetimeLocale": "Anda hanya dapat memilih setiap %s detik di pemilih waktu.",
+      "number": "Harap masukkan nilai yang valid. Hanya %s dan kelipatan dari %s.",
+      "range": "Harap masukkan nilai yang valid. Hanya %s dan kelipatan dari %s."
+    },
+    "tooLong": "Harap perpanjang teks ini hingga %s karakter atau lebih sedikit (saat ini Anda menggunakan %s karakter).",
+    "tooShort": "Harap perpanjang teks ini hingga %s karakter atau lebih (saat ini Anda menggunakan %s karakter).",
+    "patternMismatch": "Harap cocokkan format yang diminta. %s",
+    "badInput": {
+      "number": "Harap masukkan angka."
+    }
+  }
+}

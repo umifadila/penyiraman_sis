@@ -30,3 +30,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# Ignore sensitive config files (CI3)
+application/config/config.php

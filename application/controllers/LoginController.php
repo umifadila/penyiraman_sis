@@ -1,27 +1,49 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class LoginController extends CI_Controller
 {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/userguide3/general/urls.html
-	 */
 	public function index()
 	{
-		$data =  ['judul' => 'Dashboard'];
-		$this->template->load('template/index', 'pages/dashboard', $data, false);
+		$data = ['judul' => 'Login'];
+		$this->load->view('pages/login', $data);
+	}
+
+	public function authenticate()
+	{
+		// Ambil inputan username dan password
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		// Load model untuk mengakses database
+		$this->load->model('AdminModel');
+
+		// Cek apakah username ada dalam database
+		$admin = $this->AdminModel->getAdminByUsername($username);
+
+		if ($admin) {
+			// Cek apakah password yang diinputkan sesuai dengan hash MD5 di database
+			if (md5($password) === $admin['password']) {
+				$this->session->set_userdata([
+					'is_logged_in' => true,
+					'username' => $admin['username'], // Simpan username di session
+					'admin_id' => $admin['id'] // Anda bisa menyimpan id admin atau data lain
+				]);
+				echo json_encode([
+					'status' => 'success',
+					'message' => 'Login berhasil'
+				]);
+			} else {
+				echo json_encode([
+					'status' => 'error',
+					'message' => 'Username atau password salah'
+				]);
+			}
+		} else {
+			echo json_encode([
+				'status' => 'error',
+				'message' => 'Username tidak ditemukan'
+			]);
+		}
 	}
 }
