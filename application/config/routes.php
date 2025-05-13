@@ -68,3 +68,8 @@ $route['lokasi/delete/(:num)'] = 'LokasiController/delete/$1';
 
 
 $route['penjadwalan'] = 'PenjadwalanController/index';
+$route['penjadwalan/create'] = 'PenjadwalanController/create';
+$route['penjadwalan/store'] = 'PenjadwalanController/store';
+$route['penjadwalan/edit/(:num)'] = 'PenjadwalanController/edit/$1';
+$route['penjadwalan/update/(:num)'] = 'PenjadwalanController/update/$1';
+$route['penjadwalan/delete/(:num)'] = 'PenjadwalanController/delete/$1';

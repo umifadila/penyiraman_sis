@@ -1,9 +1,12 @@
-<ul style="background-color: #7bc47f;" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul style="background-color: #2E8B57;" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
+<br>
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center" href="index.html">
-    <span class="sidebar-brand-text mx-3" style="color: #7bc47f; display: block; background-color: white; padding-top: 5px; padding-left: 10px; padding-right: 10px; margin: 0px !important;">AutoGrow</span>
-    <span class="sidebar-brand-text mx-3" style="color: #7bc47f; display: block; background-color: white; padding-bottom: 3px; padding-left: 10px; padding-right: 10px; margin: 0px !important;">Chili</span>
+  <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center py-3" href="index.html" style="text-decoration: none;">
+    <div style="background: white; padding: 8px 16px; border-radius: 12px;">
+      <span style="font-size: 1.2rem; font-weight: 700; color: #2E8B57;">AutoGrow</span>
+      <span style="font-size: 0.9rem; font-weight: 500; color: #2E8B57;">Chili</span>
+    </div>
   </a>
 
   <!-- Divider -->
