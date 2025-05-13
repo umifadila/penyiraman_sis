@@ -73,7 +73,6 @@
                     <div class="my-4">
                         <hr>
                     </div>
-
                     <!-- Tombol Simpan -->
                     <div class="d-flex justify-content-end">
                         <a href="<?= base_url('penjadwalan') ?>" class="btn btn-danger">Batal</a>

@@ -1,7 +1,9 @@
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between my-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="#" class="badge badge-info">Real-Time</a>
+  <h1 class="h3 mb-0" style="color: #2E8B57;">Dashboard</h1>
+
+    <a href="#" class="badge" style="color: white; background-color: #2E8B57;">Real-Time</a>
+
   </div>
 
   <!-- Content Row -->
