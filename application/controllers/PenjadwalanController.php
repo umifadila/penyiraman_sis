@@ -9,6 +9,7 @@ class PenjadwalanController extends CI_Controller
         $this->load->library('session');
         $this->load->model('PenjadwalanModel');
         $this->load->model('LokasiModel');
+
         // Cek apakah session login ada
         if (!$this->session->userdata('is_logged_in')) {
             redirect('login');
@@ -36,13 +37,14 @@ class PenjadwalanController extends CI_Controller
     public function store()
     {
         $data = [
-            'lokasi_id' => $this->input->post('lokasi_id'),
-            'type' => $this->input->post('type'),
-            'hari' => $this->input->post('hari'),
-            'tanggal' => $this->input->post('tanggal'),
-            'waktu' => $this->input->post('waktu'),
-            'is_aktif' => $this->input->post('is_aktif'),
-            'keterangan' => $this->input->post('keterangan')
+            'lokasi_id'     => $this->input->post('lokasi_id'),
+            'type'          => $this->input->post('type'),
+            'hari'          => $this->input->post('hari'),
+            'tanggal'       => $this->input->post('tanggal'),
+            'waktu'         => $this->input->post('waktu'),
+            'durasi_menit'  => $this->input->post('durasi_menit'), // ← Tambahan penting
+            'is_aktif'      => $this->input->post('is_aktif'),
+            'keterangan'    => $this->input->post('keterangan')
         ];
 
         $this->PenjadwalanModel->insert($data);
@@ -53,9 +55,9 @@ class PenjadwalanController extends CI_Controller
     public function edit($id)
     {
         $data = [
-            'judul' => 'Edit Penjadwalan',
-            'penjadwalan' => $this->PenjadwalanModel->get_by_id($id),
-            'lokasi' => $this->LokasiModel->get_all()
+            'judul'        => 'Edit Penjadwalan',
+            'penjadwalan'  => $this->PenjadwalanModel->get_by_id($id),
+            'lokasi'       => $this->LokasiModel->get_all()
         ];
         $this->template->load('template/index', 'pages/penjadwalan/edit', $data, false);
     }
@@ -63,13 +65,14 @@ class PenjadwalanController extends CI_Controller
     public function update($id)
     {
         $data = [
-            'lokasi_id' => $this->input->post('lokasi_id'),
-            'type' => $this->input->post('type'),
-            'hari' => $this->input->post('hari'),
-            'tanggal' => $this->input->post('tanggal'),
-            'waktu' => $this->input->post('waktu'),
-            'is_aktif' => $this->input->post('is_aktif'),
-            'keterangan' => $this->input->post('keterangan')
+            'lokasi_id'     => $this->input->post('lokasi_id'),
+            'type'          => $this->input->post('type'),
+            'hari'          => $this->input->post('hari'),
+            'tanggal'       => $this->input->post('tanggal'),
+            'waktu'         => $this->input->post('waktu'),
+            'durasi_menit'  => $this->input->post('durasi_menit'), // ← Tambahan penting
+            'is_aktif'      => $this->input->post('is_aktif'),
+            'keterangan'    => $this->input->post('keterangan')
         ];
 
         $this->PenjadwalanModel->update($id, $data);

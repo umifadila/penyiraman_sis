@@ -57,12 +57,18 @@
                         <input type="time" class="form-control" id="waktu" name="waktu" value="<?= $penjadwalan['waktu'] ?>" required>
                     </div>
 
+                    <!-- Input Durasi Menit -->
+                    <div class="form-group">
+                        <label for="durasi_menit">Durasi (menit)</label>
+                        <input type="number" class="form-control" id="durasi_menit" name="durasi_menit" value="<?= $penjadwalan['durasi_menit'] ?>" required min="1">
+                    </div>
+
                     <!-- Input Status -->
                     <div class="form-group">
                         <label for="is_aktif">Status</label>
                         <select class="form-control" id="is_aktif" name="is_aktif" required>
-                            <option value="aktif" <?= $penjadwalan['is_aktif'] == 1 ? 'selected' : '' ?>>Aktif</option>
-                            <option value="non-aktif" <?= $penjadwalan['is_aktif'] == 0 ? 'selected' : '' ?>>Non-Aktif</option>
+                            <option value="1" <?= $penjadwalan['is_aktif'] == 1 ? 'selected' : '' ?>>Aktif</option>
+                            <option value="0" <?= $penjadwalan['is_aktif'] == 0 ? 'selected' : '' ?>>Non-Aktif</option>
                         </select>
                     </div>
 

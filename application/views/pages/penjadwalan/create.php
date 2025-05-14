@@ -55,6 +55,13 @@
                         <input type="time" class="form-control" id="waktu" name="waktu" required>
                     </div>
 
+                    <!-- Input Durasi -->
+                    <div class="form-group">
+                        <label for="durasi_menit">Durasi</label>
+                        <input type="text" class="form-control" id="durasi_menit" name="durasi_menit" placeholder="Masukkan Durasi dalam Menit" required>
+                    </div>
+
+
                     <!-- Input Status -->
                     <div class="form-group">
                         <label for="is_aktif">Status</label>
