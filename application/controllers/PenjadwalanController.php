@@ -18,6 +18,7 @@ class PenjadwalanController extends CI_Controller
 
     public function index()
     {
+
         $data = [
             'judul' => 'Data Penjadwalan',
             'penjadwalan' => $this->PenjadwalanModel->get_all()

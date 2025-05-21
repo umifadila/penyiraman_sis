@@ -57,12 +57,6 @@
                         <input type="time" class="form-control" id="waktu" name="waktu" value="<?= $penjadwalan['waktu'] ?>" required>
                     </div>
 
-                    <!-- Input Durasi Menit -->
-                    <div class="form-group">
-                        <label for="durasi_menit">Durasi (menit)</label>
-                        <input type="number" class="form-control" id="durasi_menit" name="durasi_menit" value="<?= $penjadwalan['durasi_menit'] ?>" required min="1">
-                    </div>
-
                     <!-- Input Status -->
                     <div class="form-group">
                         <label for="is_aktif">Status</label>

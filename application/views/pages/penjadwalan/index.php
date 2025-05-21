@@ -18,30 +18,28 @@
         <div class="table-responsive">
           <table style="font-size: 0.9rem;" class="table table-bordered" id="dataTablepenjadwalan" width="100%" cellspacing="0">
             <thead>
-              <tr style="background-color: #DFF5E3;">
-                <th class="text-center" style="width: 5%; font-weight: 600; color: #2E8B57;">NO</th>
-                <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Lokasi</th>
-                <th class="text-center" style="width: 15%; font-weight: 600; color: #2E8B57;">Jenis Jadwal</th>
-                <th class="text-center" style="width: 15%; font-weight: 600; color: #2E8B57;">Hari</th>
-                <th class="text-center" style="width: 20%; font-weight: 600; color: #2E8B57;">Tanggal</th>
-                <th class="text-center" style="width: 15%; font-weight: 600; color: #2E8B57;">Waktu</th>
-                <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Durasi</th>
-                <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Aktif</th>
-                <th class="text-center" style="width: 30%; font-weight: 600; color: #2E8B57;">Keterangan</th>
-                <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Aksi</th>
-              </tr>
+             <tr style="background-color: #DFF5E3;">
+              <th class="text-center" style="width: 5%; font-weight: 600; color: #2E8B57;">NO</th>
+              <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Lokasi</th>
+              <th class="text-center" style="width: 12%; font-weight: 600; color: #2E8B57;">Jenis Jadwal</th>
+              <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Hari</th>
+              <th class="text-center" style="width: 13%; font-weight: 600; color: #2E8B57;">Tanggal</th>
+              <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Waktu</th>
+              <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Aktif</th>
+              <th class="text-center" style="width: 20%; font-weight: 600; color: #2E8B57;">Keterangan</th>
+              <th class="text-center" style="width: 10%; font-weight: 600; color: #2E8B57;">Aksi</th>
+            </tr>
             </thead>
             <tbody>
               <?php $no = 1;
               foreach ($penjadwalan as $row): ?>
                 <tr style="background-color: #ffffff;">
                   <td class="text-center" style="vertical-align: middle;"><?= $no++ ?></td>
-                  <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['lokasi_id']) ?></td>
+                  <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['nama_lokasi']) ?></td>
                   <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['type']) ?></td>
                   <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['hari']) ?></td>
                   <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['tanggal']) ?></td>
                   <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['waktu']) ?></td>
-                  <td class="text-center" style="vertical-align: middle;"><?= htmlspecialchars($row['durasi_menit']) ?> menit</td>
                   <td class="text-center" style="vertical-align: middle;"><?= $row['is_aktif'] == 1 ? 'Aktif' : 'Nonaktif' ?></td>
                   <td style="text-align: justify; vertical-align: middle;"><?= htmlspecialchars($row['keterangan']) ?></td>
                   <td class="text-center d-flex justify-content-center" style="vertical-align: middle;">
