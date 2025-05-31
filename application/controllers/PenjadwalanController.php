@@ -43,8 +43,7 @@ class PenjadwalanController extends CI_Controller
             'hari'          => $this->input->post('hari'),
             'tanggal'       => $this->input->post('tanggal'),
             'waktu'         => $this->input->post('waktu'),
-            'durasi_menit'  => $this->input->post('durasi_menit'), // ← Tambahan penting
-            'is_aktif'      => $this->input->post('is_aktif'),
+            'is_aktif'      => 1,
             'keterangan'    => $this->input->post('keterangan')
         ];
 
@@ -71,7 +70,6 @@ class PenjadwalanController extends CI_Controller
             'hari'          => $this->input->post('hari'),
             'tanggal'       => $this->input->post('tanggal'),
             'waktu'         => $this->input->post('waktu'),
-            'durasi_menit'  => $this->input->post('durasi_menit'), // ← Tambahan penting
             'is_aktif'      => $this->input->post('is_aktif'),
             'keterangan'    => $this->input->post('keterangan')
         ];

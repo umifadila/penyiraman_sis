@@ -32,9 +32,43 @@ class DashboardController extends CI_Controller
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 	public function index()
-	{
+{
+// 	$this->load->model('PenjadwalanModel');
+// print_r($this->PenjadwalanModel->get_upcoming());
+// 	die;
+    $data = ['judul' => 'Dashboard'];
+    $this->template->load('template/index', 'pages/dashboard', $data, false);
+}
 
-		$data =  ['judul' => 'Dashboard'];
-		$this->template->load('template/index', 'pages/dashboard', $data, false);
-	}
+
+public function get_dashboard_data_ajax()
+{
+    if (!$this->input->is_ajax_request()) {
+        show_error('No direct script access allowed');
+    }
+
+    $this->load->model('LokasiModel');
+    $this->load->model('SoilMoistureModel');
+    $this->load->model('LogAksiModel');
+    $this->load->model('PenjadwalanModel');
+
+    $data = [
+        'judul' => 'Dashboard',
+        'jml_lokasi' => $this->LokasiModel->count_all(),
+        'penyiraman_today' => $this->LogAksiModel->count_today('penyiraman'),
+        'pemupukan_today' => $this->LogAksiModel->count_today('pemupukan'),
+        'jadwal_aktif' => $this->PenjadwalanModel->count_active(),
+        'soil_recent' => $this->SoilMoistureModel->get_recent_per_lokasi(),
+        'log_aksi' => $this->LogAksiModel->get_latest(10),
+        'jadwal_mendatang' => $this->PenjadwalanModel->get_upcoming()
+    ];
+
+    echo json_encode([
+        'status' => 'success',
+        'data' => $data
+    ]);
+}
+
+
+	
 }

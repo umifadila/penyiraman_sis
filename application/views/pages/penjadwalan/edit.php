@@ -78,8 +78,8 @@
 
                     <!-- Tombol Simpan -->
                     <div class="d-flex justify-content-end">
-                        <a href="<?= base_url('penjadwalan') ?>" class="btn btn-danger">Batal</a>
-                        <button type="submit" class="btn btn-primary ml-2">Simpan</button>
+                        <a href="<?= base_url('penjadwalan') ?>" class="btn btn-danger" style="background-color: #FF5252; border-color:rgb(221, 158, 158);">Batal</a>
+                        <button type="submit" class="btn btn-primary ml-2" style="background-color: #26A69A; border-color:rgb(162, 255, 246);">Simpan</button>
                     </div>
                 </form>
             </div>

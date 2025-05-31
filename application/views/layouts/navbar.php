@@ -5,11 +5,7 @@
     <i class="fas fa-bars"></i>
   </button>
 
-  <!-- Logo Icon -->
-  <div class="d-flex align-items-center">
-    <i class="fas fa-leaf" style="color: #2E8B57; font-size: 1.25rem;"></i>
-  </div>
-
+ 
   <!-- Spacer -->
   <div class="flex-grow-1"></div>
 
@@ -44,10 +40,10 @@
       <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php if ($this->session->userdata('is_logged_in')): ?>
-          <span class="mr-2 d-none d-lg-inline small font-weight-semibold" style="color: #2E8B57;">
+          <span class="mr-2 d-none d-lg-inline small font-weight-semibold" style="color: #26A69A;">
             <?php echo strtoupper($this->session->userdata('username')) . ""; ?>
           </span>
-          <i class="fas fa-user-circle fa-lg" style="color: #2E8B57;"></i>
+          <i class="fas fa-user-circle fa-lg" style="color: #26A69A;"></i>
         <?php endif; ?>
       </a>
     </li>

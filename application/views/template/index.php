@@ -39,6 +39,12 @@
             box-shadow: none;
             border-color: #ccc;
         }
+
+        .pagination .page-item.active .page-link {
+        background-color:rgb(255, 255, 255); /* kuning Bootstrap (warning) */
+        border-color:rgb(159, 159, 159);
+        color: #212529; /* agar teks tetap terbaca */
+    }
     </style>
     <!-- Custom styles for this page -->
     <link href="<?= base_url() ?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -245,6 +251,85 @@
                     }
                 });
             });
+            function loadDashboardData() {
+  $.ajax({
+    url: 'dashboard/data',
+    method: 'GET',
+    dataType: 'json',
+    success: function (response) {
+      const d = response.data;
+
+      // Ringkasan
+      $('#jml_lokasi').text(d.jml_lokasi);
+      $('#penyiraman_today').text(d.penyiraman_today);
+      $('#pemupukan_today').text(d.pemupukan_today);
+      $('#jadwal_aktif').text(d.jadwal_aktif);
+
+      // Log Aksi
+      let logRows = '';
+      d.log_aksi.forEach(row => {
+        logRows += `
+          <tr>
+            <td>${row.nama}</td>
+            <td>${capitalize(row.jenis_aksi)}</td>
+            <td>${capitalize(row.sumber_aksi)}</td>
+            <td>${formatDateTime(row.waktu_aksi)}</td>
+          </tr>`;
+      });
+      $('#log_aksi_tbody').html(logRows || '<tr><td colspan="4" class="text-center">Tidak ada data</td></tr>');
+
+      // Kelembaban
+      let soilRows = '';
+      d.soil_recent.forEach(row => {
+        soilRows += `
+          <tr>
+            <td>${row.nama}</td>
+            <td>${row.kelembaban}</td>
+            <td>${formatDateTime(row.waktu_pencatatan)}</td>
+          </tr>`;
+      });
+      $('#soil_recent_tbody').html(soilRows || '<tr><td colspan="3" class="text-center">Tidak ada data</td></tr>');
+
+      // Jadwal
+      let jadwalRows = '';
+      d.jadwal_mendatang.forEach(row => {
+        jadwalRows += `
+          <tr>
+            <td>${row.nama_lokasi}</td>
+            <td>${capitalize(row.type)}</td>
+            <td>${row.hari || '-'}</td>
+            <td>${row.tanggal || '-'}</td>
+            <td>${row.waktu.slice(0, 5)}</td>
+            <td><span class="badge ${row.is_aktif ? 'badge-success' : 'badge-secondary'}">${row.is_aktif ? 'Aktif' : 'Nonaktif'}</span></td>
+          </tr>`;
+      });
+      $('#jadwal_mendatang_tbody').html(jadwalRows || '<tr><td colspan="6" class="text-center">Tidak ada data</td></tr>');
+    },
+    error: function () {
+      console.warn('Gagal memuat data dashboard.');
+    }
+  });
+}
+
+        function formatDateTime(datetime) {
+        const d = new Date(datetime);
+        return `${d.getDate().toString().padStart(2, '0')}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getFullYear()} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
+        }
+
+        function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        // Jalankan pertama kali saat halaman dimuat
+        $(document).ready(function () {
+        loadDashboardData();
+
+        // Auto-refresh setiap 3 detik (10000 ms)
+        setInterval(loadDashboardData, 3000);
+});
+
+    
+    
         });
     </script>
 

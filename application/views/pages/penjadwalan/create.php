@@ -36,7 +36,7 @@
                     <!-- Input Hari -->
                     <div class="form-group">
                         <label for="hari">Hari</label>
-                        <select class="form-control" name="hari" required>
+                        <select class="form-control" name="hari">
                             <?php foreach (['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'] as $day): ?>
                                 <option value="<?= $day ?>"><?= $day ?></option>
                             <?php endforeach ?>
@@ -46,7 +46,7 @@
                     <!-- Input Tanggal -->
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                        <input type="date" class="form-control" id="tanggal" name="tanggal">
                     </div>
 
                     <!-- Input Waktu -->

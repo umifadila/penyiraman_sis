@@ -11,6 +11,11 @@ class LokasiModel extends CI_Model
         parent::__construct();
     }
 
+    // Menghitung semua data lokasi
+    public function count_all() {
+        return $this->db->count_all($this->table);
+    }
+
     // Fungsi untuk mengambil semua data lokasi
     public function get_all()
     {

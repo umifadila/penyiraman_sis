@@ -1,16 +1,40 @@
-<ul style="background-color: #2E8B57;" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul style="background-color: #26A69A;" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
-<br>
+
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center py-3" href="index.html" style="text-decoration: none;">
-    <div style="background: white; padding: 8px 16px; border-radius: 12px;">
-      <span style="font-size: 1.2rem; font-weight: 700; color: #2E8B57;">AutoGrow</span>
-      <span style="font-size: 0.9rem; font-weight: 500; color: #2E8B57;">Chili</span>
-    </div>
+  <a  style="text-decoration: none; padding: 0px !important;"  class="sidebar-brand d-flex flex-column align-items-center justify-content-center  pading-0 mt-0" href="index.html">
+  <div style="line-height: 1rem; padding: 0px !important;"  class="">
+  <span style="
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:rgb(255, 255, 255);
+
+ 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  ">
+    AutoGrow <br> 
+
+    <span style="
+    font-size: 0.9rem;
+    font-weight: 500;
+    color:rgb(255, 255, 255);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 0px;
+    padding: 0px;
+  ">
+    Chili
+  </span>
+  </span>
+  
+
+</div>
+
   </a>
 
   <!-- Divider -->
-  <hr class="sidebar-divider my-0 mb-2">
+  <hr class="sidebar-divider  mb-2">
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item <?= ($this->uri->segment(1) == 'dashboard') ? 'active' : '' ?> p-1">
